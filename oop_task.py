@@ -1,4 +1,4 @@
-#14
+# 14
 class Person():
     def __init__(self, surname, dayOfBirth, yearOfBearth):
         self.surname = surname
@@ -10,8 +10,7 @@ class Person():
         print('Дата рождения:',self.dayOfBirth, self.yearOfBearth)
 
     def age(self):
-        print('Фамилия:', self.surname)
-        print('Возраст:',2022 - self.yearOfBearth)
+        return 2022 - self.yearOfBearth
 
 class Enrollee(Person):
     def __init__(self, surname, dayOfBirth, yearOfBearth, faculty):
@@ -58,10 +57,11 @@ student1 = Student('Кощеев','29.12.', 2000, 'Математика', '1')
 student2 = Student('Голышева','01.12.', 1999, 'Инженерия', '3')
 teacher1 = Teacher('Коровин','02.13.', 1980, 'История', 'Преподователь', '15 лет')
 teacher2 = Teacher('Семенова','05.05.', 1978, 'Режиссура', 'Ректор', '25 лет')
+
 listall = [person1, person2,enrolle1, enrolle2,student1, student2, teacher1, teacher2]
 for i in listall:
-    
-
-
-
-
+    i.print_info()
+for i in listall:
+    if i.age() >= 40:
+        print('Люди, которые подходят под ограничения:')
+        i.print_info()
